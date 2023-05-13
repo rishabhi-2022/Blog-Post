@@ -1,0 +1,73 @@
+{
+  "posts": [
+    {
+      "id": 3,
+      "roll": 12,
+      "name": "Rishabh",
+      "dob": "2005-02-09",
+      "score": null
+    },
+    {
+      "id": 4,
+      "roll": 2,
+      "name": "Hari",
+      "dob": "2022-11-24",
+      "score": 80
+    }
+  ],
+  "users": [
+    {
+      "name": "sam",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "test",
+      "password": "12",
+      "id": 2
+    },
+    {
+      "name": "sam",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "Arjun",
+      "password": "11",
+      "id": 4
+    },
+    {
+      "name": "Hari",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "name": "Zucker",
+      "password": "23",
+      "id": 6
+    },
+    {
+      "name": "Sam",
+      "password": "1234",
+      "id": 7
+    },
+    {
+      "name": "Rukit",
+      "password": "321",
+      "id": 8
+    },
+    {
+      "name": "Aadit",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "name": "Rishabh",
+      "password": "543",
+      "id": 10
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

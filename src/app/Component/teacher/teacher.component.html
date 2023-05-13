@@ -1,0 +1,72 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1>Result Management System</h1>
+    <div class="d-flex">
+      <button type="button" (click)="clickAdd()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+        Student</button>
+      <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
+    </div>
+  </div>
+</nav>
+<table class="table mt-3 mx-3">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Roll Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date Of Birth</th>
+      <th scope="col">Score</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of studentData">
+      <td>{{row.id}}</td>
+      <td>{{row.roll}}</td>
+      <td>{{row.name}}</td>
+      <td>{{row.dob}}</td>
+      <td>{{row.score}}</td>
+      <td>
+        <button class="btn btn-info" (click)="onEdit(row)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Edit</button>
+        <button class="btn btn-danger mx-3" (click)="deleteStudent(row)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Roll Number</label>
+            <input type="number" formControlName="roll" class="form-control" id="exampleInputEmail1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Date of Birth</label>
+            <input type="date" formControlName="dob" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Score</label>
+            <input type="number" formControlName="score" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="insertStudent()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateStudent()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
